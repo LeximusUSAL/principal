@@ -4,7 +4,7 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 ## 🌐 Demo en Vivo
 
-[Ver portal principal en GitHub Pages](https://mariapalaciosnieto.github.io/IberiaMusical/index-principal.html)
+[Ver portal principal en GitHub Pages](https://mariapalaciosnieto.github.io/principal)
 
 ## 📊 Características del Portal
 
