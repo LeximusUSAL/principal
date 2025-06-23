@@ -4,7 +4,7 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 ## 🌐 Demo en Vivo
 
-[Ver portal principal en GitHub Pages](https://mariapalaciosnieto.github.io/principal)
+[Ver portal principal en GitHub Pages](https://LeximusUSAL.github.io/principal)
 
 ## 📊 Características del Portal
 
@@ -193,7 +193,7 @@ Este portal y sus análisis están desarrollados para fines de **investigación 
 Para consultas académicas o colaboraciones:
 - **Institución**: Universidad de Salamanca. mpalacios@usal.es
 - **Proyecto**: LexiMus https://leximus.es/
-- **Repositorio**: [GitHub](https://github.com/MariaPalaciosNieto/principal)
+- **Repositorio**: [GitHub](https://github.com/LeximusUSAL/principal)
 
 ## 📜 Licencia y Citación
 
@@ -201,7 +201,7 @@ Si utilizas este trabajo en tu investigación, por favor cita:
 ```
 Análisis Musical Computacional de prensa histórica. 
 Proyecto LexiMus, Universidad de Salamanca. 
-Disponible en: https://mariapalaciosnieto.github.io/principal
+Disponible en: https://LeximusUSAL.github.io/principal
 
 ---
 
