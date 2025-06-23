@@ -198,7 +198,7 @@ Este portal y sus análisis están desarrollados para fines de **investigación 
 ## 📞 Contacto
 
 Para consultas académicas o colaboraciones:
-- **Institución**: Universidad de Salamanca
+- **Institución**: Universidad de Salamanca. mpalacios@usal.es
 - **Proyecto**: LexiMus https://leximus.es/
 - **Repositorio**: [GitHub](https://github.com/MariaPalaciosNieto/principal)
 
