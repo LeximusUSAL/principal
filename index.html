@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Musical de Fuentes Históricas - Proyecto LexiMus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c2c2c;
+            --secondary-color: #8B4B3B;
+            --accent-color: #A0282F;
+            --success-color: #6B4E3D;
+            --warning-color: #B85450;
+            --background-light: #f5f5f5;
+            --text-light: #6c6c6c;
+            --shadow: 0 5px 15px rgba(0,0,0,0.15);
+            --shadow-hover: 0 10px 30px rgba(0,0,0,0.25);
+            --gradient-bg: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .intro-section h2 {
+            color: var(--secondary-color);
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .destacado {
+            background: var(--background-light);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .webs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .web-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .web-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--accent-color);
+        }
+
+        .web-card-header {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .web-card-header h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .web-card-header .periodo {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .web-card-body {
+            padding: 30px;
+        }
+
+        .web-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--background-light);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .web-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-acceso {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-acceso:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 40, 47, 0.3);
+        }
+
+        .metodologia-section {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metodologia-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .metodologia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .metodologia-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .metodologia-item h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .corpus-info {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .corpus-info h2 {
+            color: var(--secondary-color);
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .corpus-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .corpus-stat {
+            text-align: center;
+            padding: 20px;
+            background: var(--background-light);
+            border-radius: 15px;
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .corpus-stat .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+
+        .fuentes-proyecto {
+            background: var(--background-light);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .fuentes-proyecto h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .webs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .web-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Análisis Musical de Fuentes Históricas</h1>
+            <p class="subtitle">Procesamiento computacional de corpus textuales musicales (s. XVIII-XXI)</p>
+        </header>
+
+        <div class="intro-section">
+            <h2>🔬 Presentación del Proyecto</h2>
+            <div class="intro-text">
+                A través de grandes corpus de texto, que abarcan desde el siglo XVIII hasta la actualidad, y mediante un análisis computacional, en esta web se comparten los primeros datos estadísticos que estudian fuentes en prensa histórica con contenido musical.
+            </div>
+            
+            <div class="destacado">
+                Se trata de un estudio preliminar que irá mejorando progresivamente conforme se vayan limpiando y depurando los OCR de las revistas y fuentes musicales con las que estamos trabajando.
+            </div>
+            
+            <div class="intro-text">
+                Actualmente nos encontramos en dos fases de trabajo simultáneas: por un lado, se están transcribiendo las revistas musicales con <strong>eScriptorium</strong>, para depurar el OCR que ya tenemos. Nuestro OCR actual ya es mejorado respecto al que se encuentra en las principales instituciones hemerográficas españolas, por eso ya podemos compartir una serie de datos que resultan útiles para la investigación.
+            </div>
+            
+            <div class="intro-text">
+                Sin embargo, todavía consideramos que se pueden depurar más esos datos. Por eso estamos desarrollando mejoras en esas fuentes que esperamos puedan precisar mejor todos los datos que compartimos en esta web.
+            </div>
+        </div>
+
+        <div class="corpus-info">
+            <h2>📊 Estado Actual del Corpus</h2>
+            <div class="corpus-stats">
+                <div class="corpus-stat">
+                    <span class="number">3</span>
+                    <span class="stat-label">Fuentes Procesadas</span>
+                </div>
+                <div class="corpus-stat">
+                    <span class="number">1,664</span>
+                    <span class="stat-label">Números/Artículos</span>
+                </div>
+                <div class="corpus-stat">
+                    <span class="number">2,591,170</span>
+                    <span class="stat-label">Palabras Analizadas</span>
+                </div>
+                <div class="corpus-stat">
+                    <span class="number">25</span>
+                    <span class="stat-label">Años de Cobertura</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: var(--secondary-color); font-size: 2.5em; margin-bottom: 40px; border-bottom: 3px solid var(--secondary-color); padding-bottom: 15px;">📚 Fuentes Analizadas</h2>
+
+        <div class="webs-grid">
+            <!-- La Iberia Musical -->
+            <div class="web-card">
+                <div class="web-card-header">
+                    <h3>La Iberia Musical</h3>
+                    <div class="periodo">1842-1845 • Romanticismo Temprano</div>
+                </div>
+                <div class="web-card-body">
+                    <div class="web-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">159</span>
+                            <span class="stat-label">Números</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">547,230</span>
+                            <span class="stat-label">Palabras</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">21.6%</span>
+                            <span class="stat-label">Densidad Musical</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0.65:1</span>
+                            <span class="stat-label">Ratio H:M</span>
+                        </div>
+                    </div>
+                    <div class="web-description">
+                        <strong>Primera revista musical española.</strong> Análisis del panorama musical madrileño del Romanticismo temprano, con predominio de la ópera italiana y las grandes divas del bel canto. Documento único de la recepción del gusto romántico en España.
+                    </div>
+                    <a href="https://mariapalaciosnieto.github.io/IberiaMusical/" class="btn-acceso">🎼 Acceder al Análisis</a>
+                </div>
+            </div>
+
+            <!-- Revistas Musicales -->
+            <div class="web-card">
+                <div class="web-card-header">
+                    <h3>Revistas Musicales Especializadas</h3>
+                    <div class="periodo">1909-1917 • Modernismo Musical</div>
+                </div>
+                <div class="web-card-body">
+                    <div class="web-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">78</span>
+                            <span class="stat-label">Números</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1,759,290</span>
+                            <span class="stat-label">Palabras</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">18.1%</span>
+                            <span class="stat-label">Densidad Musical</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0.78:1</span>
+                            <span class="stat-label">Ratio H:M</span>
+                        </div>
+                    </div>
+                    <div class="web-description">
+                        <strong>Revista Musical de Bilbao e Hispanoamericana.</strong> Primera evidencia de equilibrio de género en prensa musical especializada. Análisis de la profesionalización de la crítica musical española y las redes culturales hispanoamericanas.
+                    </div>
+                    <a href="https://mariapalaciosnieto.github.io/RevistasBMH/" class="btn-acceso">🎻 Acceder al Análisis</a>
+                </div>
+            </div>
+
+            <!-- El Sol -->
+            <div class="web-card">
+                <div class="web-card-header">
+                    <h3>Periódico "El Sol"</h3>
+                    <div class="periodo">1918-1935 • Vanguardias Musicales</div>
+                </div>
+                <div class="web-card-body">
+                    <div class="web-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1,427</span>
+                            <span class="stat-label">Artículos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">285,650</span>
+                            <span class="stat-label">Palabras</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15.8%</span>
+                            <span class="stat-label">Densidad Musical</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">18:1</span>
+                            <span class="stat-label">Ratio H:M</span>
+                        </div>
+                    </div>
+                    <div class="web-description">
+                        <strong>Prensa generalista con cobertura musical.</strong> Análisis de la desigualdad de género en medios generalistas y estudio de la diversidad cultural en la música española del período de entreguerras.
+                    </div>
+                    <a href="index (ELSOL).html" class="btn-acceso">📰 Acceder al Análisis</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section">
+            <h2>🔬 Metodología de Trabajo</h2>
+            <div class="intro-text" style="color: white; text-align: center; margin-bottom: 20px;">
+                Nuestro enfoque combina técnicas de humanidades digitales con procesamiento de lenguaje natural para extraer conocimiento de fuentes históricas musicales.
+            </div>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-item">
+                    <h4>📖 Digitalización Mejorada</h4>
+                    <p>OCR mejorado respecto a instituciones hemerográficas estándar, con transcripción manual en eScriptorium para mayor precisión.</p>
+                </div>
+                <div class="metodologia-item">
+                    <h4>🤖 Procesamiento Computacional</h4>
+                    <p>Análisis automatizado con expresiones regulares y técnicas de PLN para extracción de entidades musicales.</p>
+                </div>
+                <div class="metodologia-item">
+                    <h4>📊 Análisis Estadístico</h4>
+                    <p>Cuantificación de menciones, análisis de género, evolución temporal y mapeo geográfico de la actividad musical.</p>
+                </div>
+                <div class="metodologia-item">
+                    <h4>🔍 Validación Histórica</h4>
+                    <p>Contextualización musicológica y validación cruzada con fuentes especializadas para garantizar la precisión histórica.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="fuentes-proyecto">
+                <h3>📚 Sobre el Proyecto LexiMus</h3>
+                <p>
+                    Los análisis presentados en esta web forman parte del corpus desarrollado por el proyecto 
+                    <strong>"LexiMus, Léxico y ontología de la música en español"</strong> 
+                    (PID2022-139589NB-C33), con sede en la Universidad de Salamanca 
+                    (proyecto coordinado desde el Instituto Complutense de Ciencias Musicales 
+                    en colaboración con la Universidad de La Rioja).
+                </p>
+                <p style="margin-top: 15px;">
+                    Este proyecto busca crear una ontología completa de la música en español a través 
+                    del análisis de fuentes históricas, contribuyendo al desarrollo de las humanidades 
+                    digitales aplicadas a la musicología.
+                </p>
+            </div>
+            
+            <p>📊 <strong>Análisis Musical Computacional de Fuentes Históricas</strong></p>
+            <p>🔍 Metodología: Procesamiento de lenguaje natural y análisis de corpus textuales</p>
+            <p>📅 Cobertura: Siglos XVIII-XXI • 🎯 Datos preliminares en mejora continua</p>
+            <p>🎼 Proyecto pionero en musicología computacional española</p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #bbb;">
+                Creado para la investigación musicológica • © 2024
+            </p>
+            
+            <div style="margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+                <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <img src="LOGOS/Logo_USAL_Color_2012.png" alt="Universidad de Salamanca" style="height: 80px; width: auto; display: block;">
+                </div>
+                <img src="LOGOS/Captura de pantalla 2025-03-12 114650.png" alt="Financiación del proyecto" style="height: 60px; width: auto;">
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
