@@ -195,9 +195,20 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 
 Este portal y sus análisis están desarrollados para fines de **investigación académica**. Los datos utilizados pertenecen al dominio público (publicaciones 1842-1935) y están disponibles para consulta académica.
 
-## 👥 Contribución y Contacto
+## 📞 Contacto
 
-Para consultas académicas, colaboraciones o acceso a datos específicos, contactar con el equipo del **Proyecto LexiMus** a través de las instituciones participantes.
+Para consultas académicas o colaboraciones:
+- **Institución**: Universidad de Salamanca
+- **Proyecto**: LexiMus https://leximus.es/
+- **Repositorio**: [GitHub](https://github.com/MariaPalaciosNieto/principal)
+
+## 📜 Licencia y Citación
+
+Si utilizas este trabajo en tu investigación, por favor cita:
+```
+Análisis Musical del Periódico "El Sol" (1918-1935). 
+Proyecto LexiMus, Universidad de Salamanca. 
+Disponible en: https://mariapalaciosnieto.github.io/principal
 
 ---
 
