@@ -162,13 +162,6 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 - **Períodos adicionales** en fase de digitalización
 - **Metodología escalable** para corpus futuros
 
-## 🔗 Enlaces de Acceso
-
-### Análisis Específicos
-- **[La Iberia Musical (1842-1845)](https://mariapalaciosnieto.github.io/IberiaMusical/)** - Romanticismo temprano
-- **[Revistas Musicales (1909-1917)](https://mariapalaciosnieto.github.io/RevistasBMH/)** - Modernismo musical
-- **[El Sol (1918-1935)](https://mariapalaciosnieto.github.io/analisis-musical-el-sol/)** - Vanguardias y entreguerras
-
 ### Recursos Adicionales
 - **Documentación técnica** en archivos README específicos
 - **Datos fuente** disponibles para investigación académica
