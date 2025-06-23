@@ -1,4 +1,4 @@
-# Portal de Análisis Musical de Fuentes Históricas - Proyecto LexiMus
+# Portal de Análisis Musical de Prensa Histórica - Proyecto LexiMus (Universidad de Salamanca)
 
 Un portal web que centraliza el acceso a análisis computacionales de grandes corpus textuales musicales, abarcando desde el siglo XVIII hasta la actualidad. Presenta los primeros datos estadísticos que estudian fuentes en prensa histórica con contenido musical.
 
@@ -9,30 +9,14 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 ## 📊 Características del Portal
 
 ### Portal Centralizado
-- **Acceso unificado** a 3 análisis musicales especializados
+- **Acceso unificado** a análisis musicales especializados
 - **Dashboard interactivo** con estadísticas globales del corpus
 - **Navegación intuitiva** entre diferentes fuentes históricas
 - **Diseño responsivo** optimizado para todos los dispositivos
 
 ### Fuentes Analizadas
 
-#### 🎼 La Iberia Musical (1842-1845)
-- **159 números** del primer periódico musical español
-- **547,230 palabras** del Romanticismo temprano
-- **21.6% densidad musical** - La más alta del corpus
-- **Ratio H:M 0.65:1** - Predominio femenino operístico
-
-#### 🎻 Revistas Musicales Especializadas (1909-1917)  
-- **78 números** de Revista Musical de Bilbao e Hispanoamericana
-- **1,759,290 palabras** del período modernista
-- **18.1% densidad musical** - Corpus especializado
-- **Ratio H:M 0.78:1** - Equilibrio de género único
-
-#### 📰 Periódico "El Sol" (1918-1935)
-- **1,427 artículos** de prensa generalista
-- **285,650 palabras** del período de entreguerras
-- **15.8% densidad musical** - Cobertura selectiva
-- **Ratio H:M 18:1** - Desigualdad característica
+Prensa històrica de repositorios públicos españoles. Hemeroteca Biblioteca Nacional de España, portal de Prensa Histórica. Lectura OCR mejorada por LexiMus.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -40,33 +24,15 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 - **JavaScript ES6** - Interacción y navegación
 - **CSS Grid/Flexbox** - Layouts adaptativos
 - **Python** - Procesamiento de corpus textuales
-- **eScriptorium** - Transcripción y mejora de OCR
-
-## 📈 Estadísticas Globales del Corpus
-
-### Volumen de Datos
-- **3 fuentes históricas** procesadas y analizadas
-- **1,664 números/artículos** totales
-- **2,591,170 palabras** analizadas en conjunto
-- **25 años de cobertura** temporal (1842-1845, 1909-1917, 1918-1935)
-
-### Distribución Temporal
-- **Siglo XIX temprano**: La Iberia Musical (21.1% del corpus)
-- **Siglo XX temprano**: Revistas especializadas (67.9% del corpus)  
-- **Período entreguerras**: El Sol (11.0% del corpus)
-
-### Análisis Comparativo
-- **Densidad musical**: 21.6% → 18.1% → 15.8% (especialización decreciente)
-- **Equilibrio de género**: 0.65:1 → 0.78:1 → 18:1 (deterioro progresivo)
-- **Volumen promedio**: 3,442 → 22,555 → 200 palabras por pieza
+- **eScriptorium** - Transcripción y mejora de OCR (en proceso)
 
 ## 🎯 Valor Académico
 
-### Pionero en España
+### Pionero en análisis de grandes corpus con noticias musicales en España
 - **Primeros datos estadísticos** sobre prensa musical histórica española
 - **Metodología innovadora** combinando humanidades digitales y PLN
 - **Corpus representativo** de 3 siglos de cultura musical
-- **Evidencia empírica** de patrones de género y representación
+- **Evidencia empírica** de patrones de género y representación musical
 
 ### Hallazgos Transversales
 - **Evolución de la representación femenina**: Predominio operístico (XIX) → Equilibrio profesional (XX temprano) → Marginación generalista (XX medio)
@@ -104,13 +70,13 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 ## 📚 Contexto Institucional
 
 ### Proyecto LexiMus
-Este portal forma parte del proyecto **"LexiMus, Léxico y ontología de la música en español"** (PID2022-139589NB-C33), con sede en la Universidad de Salamanca, coordinado desde el Instituto Complutense de Ciencias Musicales en colaboración con la Universidad de La Rioja.
+Este portal forma parte del proyecto **"LexiMus: Léxico y ontología de la música en español"** (PID2022-139589NB-C33), con sede en la Universidad de Salamanca, coordinado desde el Instituto Complutense de Ciencias Musicales en colaboración con la Universidad de La Rioja.
 
 ### Objetivos del Proyecto
 - **Ontología musical** completa en español
 - **Corpus diacrónico** de fuentes musicales
 - **Metodología** de humanidades digitales aplicadas
-- **Herramientas** de análisis para la investigación musicológica
+- **Herramientas** de análisis computacional para la investigación musicológica
 
 ## 🎨 Diseño y Experiencia de Usuario
 
@@ -151,7 +117,7 @@ Este portal forma parte del proyecto **"LexiMus, Léxico y ontología de la mús
 ## 🔍 Estado Actual y Proyección
 
 ### Datos Preliminares
-Este portal presenta **resultados preliminares** que mejorarán progresivamente conforme se depuren los OCR de las fuentes. Los datos actuales ya superan en calidad a los disponibles en instituciones hemerográficas estándar.
+Este portal presenta **resultados preliminares** que mejorarán progresivamente conforme se depuren los OCR de las fuentes. Los datos actuales ya superan en calidad y cantidad a los disponibles en instituciones hemerográficas estándar.
 
 ### Fases de Desarrollo
 1. **Fase Actual**: Transcripción con eScriptorium para depurar OCR existente
