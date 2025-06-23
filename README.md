@@ -206,7 +206,7 @@ Para consultas académicas o colaboraciones:
 
 Si utilizas este trabajo en tu investigación, por favor cita:
 ```
-Análisis Musical del Periódico "El Sol" (1918-1935). 
+Análisis Musical Computacional de prensa histórica. 
 Proyecto LexiMus, Universidad de Salamanca. 
 Disponible en: https://mariapalaciosnieto.github.io/principal
 
