@@ -171,4 +171,4 @@ Disponible en: https://LeximusUSAL.github.io/principal
 
 ---
 
-**🎼 "Tres siglos de música española a través del análisis computacional"** • © 2024 Universidad de Salamanca
+**🎼 "Tres siglos de música española a través del análisis computacional"** • © 2025 Universidad de Salamanca
