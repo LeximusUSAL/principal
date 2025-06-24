@@ -635,19 +635,19 @@
             </div>
             <div class="stats-grid">
                 <div class="stat-card reveal">
-                    <div class="stat-number">5</div>
+                    <div class="stat-number">6</div>
                     <div class="stat-label">Fuentes Procesadas</div>
                 </div>
                 <div class="stat-card reveal">
-                    <div class="stat-number">1,901</div>
+                    <div class="stat-number">1,966</div>
                     <div class="stat-label">Números/Artículos</div>
                 </div>
                 <div class="stat-card reveal">
-                    <div class="stat-number">4.6M</div>
+                    <div class="stat-number">4.9M</div>
                     <div class="stat-label">Palabras Analizadas</div>
                 </div>
                 <div class="stat-card reveal">
-                    <div class="stat-number">53</div>
+                    <div class="stat-number">78</div>
                     <div class="stat-label">Años de Cobertura</div>
                 </div>
             </div>
@@ -839,6 +839,41 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Boletín Musical -->
+                <div class="source-card reveal">
+                    <div class="source-header">
+                        <h3 class="source-title">Boletín Musical</h3>
+                        <div class="source-period">1893-1918 • Educación Musical</div>
+                    </div>
+                    <div class="source-body">
+                        <div class="source-stats">
+                            <div class="mini-stat">
+                                <span class="mini-stat-number">65</span>
+                                <span class="mini-stat-label">Números</span>
+                            </div>
+                            <div class="mini-stat">
+                                <span class="mini-stat-number">329K</span>
+                                <span class="mini-stat-label">Palabras</span>
+                            </div>
+                            <div class="mini-stat">
+                                <span class="mini-stat-number">0.68%</span>
+                                <span class="mini-stat-label">Densidad Musical</span>
+                            </div>
+                            <div class="mini-stat">
+                                <span class="mini-stat-number">N/A</span>
+                                <span class="mini-stat-label">Ratio H:M</span>
+                            </div>
+                        </div>
+                        <div class="source-description">
+                            <strong>Revista técnica y pedagógica.</strong> Dirigida por Varela Silvari, fue una publicación de referencia para la educación musical española con especial énfasis en terminología técnica y metodología docente.
+                        </div>
+                        <a href="boletin_musical_estadisticas.html" class="source-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Acceder al Análisis
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -915,10 +950,10 @@
                 
              <div class="footer-logos">
                     <div class="logo-container">
-                        <span style="color: var(--primary); font-weight: bold;">Universidad de Salamanca</span>
+                        <img src="LOGOS/Logo_USAL_Color_2012.png" alt="Universidad de Salamanca" style="max-height: 60px; background: white; padding: 8px; border-radius: 6px;">
                     </div>
                     <div class="logo-container">
-                        <span style="color: var(--primary); font-weight: bold;">Financiación MCIN</span>
+                        <img src="LOGOS/Captura de pantalla 2025-03-12 114650.png" alt="Proyecto LexiMus" style="max-height: 60px;">
                     </div>
                 </div>
                 
@@ -999,7 +1034,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    const targets = [5, 1901, 4657350, 53];
+                    const targets = [6, 1966, 4986030, 78];
                     
                     statNumbers.forEach((number, index) => {
                         animateCounter(number, targets[index]);
