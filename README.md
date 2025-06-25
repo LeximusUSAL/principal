@@ -16,7 +16,9 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 ### Fuentes Analizadas
 
-Prensa històrica de repositorios públicos españoles. Hemeroteca Biblioteca Nacional de España, portal de Prensa Histórica. Lectura OCR mejorada por LexiMus.
+Prensa histórica disponible en la [HEMEROTECA BNE](https://hemerotecadigital.bne.es/hd/es/advanced). 
+
+Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración. La web se irá actualizando con mejoras sustanciales en los próximos meses.
 
 ## 🛠️ Tecnologías Utilizadas
 
