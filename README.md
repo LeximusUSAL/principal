@@ -1,6 +1,6 @@
 # Portal de Análisis Musical de Prensa Histórica - Proyecto LexiMus (Universidad de Salamanca)
 
-Un portal web que centraliza el acceso a análisis computacionales de grandes corpus textuales musicales, abarcando desde el siglo XVIII hasta la actualidad. Presenta los primeros datos estadísticos que estudian fuentes en prensa histórica con contenido musical.
+Un portal web que centraliza el acceso a análisis computacionales de grandes corpus textuales musicales, abarcando desde el siglo XVIII hasta la actualidad. Presenta los primeros datos estadísticos que estudian fuentes en prensa histórica con contenido musical. Se trata de una web provisional en proceso de mejora constante. Actualmente estamos mejorando el OCR de las revistas analizadas para ofrecer una mayor preción aún de los resultados.
 
 ## 🌐 Demo en Vivo
 
@@ -18,7 +18,7 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 Prensa histórica disponible en la [HEMEROTECA BNE](https://hemerotecadigital.bne.es/hd/es/advanced). 
 
-Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración. La web se irá actualizando con mejoras sustanciales en los próximos meses.
+Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración. 
 
 ## 🛠️ Tecnologías Utilizadas
 
