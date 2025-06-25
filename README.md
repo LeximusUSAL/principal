@@ -50,7 +50,8 @@ Lectura OCR mejorada por LexiMus con VERTEX AI, actualmente en proceso de depura
 ## 🔬 Metodología Transversal
 
 ### Digitalización Avanzada
-- **eScriptorium** para transcripción manual y mejora de OCR
+- **VERTEX AI** para trabajo por lotes y extracción inicial del texto
+- **eScriptorium** para transcripción y mejora del OCR actual (trabajo actualmente en proceso)
 - **Calidad superior** a repositorios institucionales estándar
 - **Proceso iterativo** de depuración y validación
 
@@ -76,7 +77,8 @@ Lectura OCR mejorada por LexiMus con VERTEX AI, actualmente en proceso de depura
 Este portal forma parte del proyecto **"LexiMus: Léxico y ontología de la música en español"** (PID2022-139589NB-C33), con sede en la Universidad de Salamanca, coordinado desde el Instituto Complutense de Ciencias Musicales en colaboración con la Universidad de La Rioja.
 
 ### Objetivos del Proyecto
-- **Ontología musical** completa en español
+- **Ontología musical** completa en español, desarrollada desde el grupo coordinador ICCMU.
+- **Análisis de diccionarios históricos** con especial énfasis en el siglo XIX, desarrollado desde la Universidad de la Rioja.
 - **Corpus diacrónico** de fuentes musicales
 - **Metodología** de humanidades digitales aplicadas
 - **Herramientas** de análisis computacional para la investigación musicológica
