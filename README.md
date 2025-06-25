@@ -51,7 +51,7 @@ Lectura OCR mejorada por LexiMus con VERTEX AI, actualmente en proceso de depura
 
 ### Digitalización Avanzada
 - **VERTEX AI** para trabajo por lotes y extracción inicial del texto
-- **eScriptorium** para transcripción y mejora del OCR actual (trabajo actualmente en proceso)
+- **eScriptorium** para transcripción y mejora del OCR (trabajo actualmente en proceso)
 - **Calidad superior** a repositorios institucionales estándar
 - **Proceso iterativo** de depuración y validación
 
