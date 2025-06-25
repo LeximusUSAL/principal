@@ -16,7 +16,7 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 ### Fuentes Analizadas
 
-Prensa histórica disponible en la [HEMEROTECA BNE](https://hemerotecadigital.bne.es/hd/es/advanced). 
+Prensa histórica disponible completa en la [HEMEROTECA BNE](https://hemerotecadigital.bne.es/hd/es/advanced). 
 
 Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración. 
 
