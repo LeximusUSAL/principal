@@ -18,7 +18,7 @@ Un portal web que centraliza el acceso a análisis computacionales de grandes co
 
 Prensa histórica disponible completa en la [HEMEROTECA BNE](https://hemerotecadigital.bne.es/hd/es/advanced). 
 
-Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración. 
+Lectura OCR mejorada por LexiMus con VERTEX AI, actualmente en proceso de depuración con eScriptorium. 
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -26,7 +26,8 @@ Lectura OCR mejorada por LexiMus, actualmente en proceso de mejora y depuración
 - **JavaScript ES6** - Interacción y navegación
 - **CSS Grid/Flexbox** - Layouts adaptativos
 - **Python** - Procesamiento de corpus textuales
-- **eScriptorium** - Transcripción y mejora de OCR (en proceso)
+- **VERTEX AI** - Módulos pre-entrenados de Google para la extracción de texto
+- **eScriptorium** - Transcripción y mejora de OCR (actualmente en proceso)
 
 ## 🎯 Valor Académico
 
