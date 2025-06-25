@@ -148,7 +148,7 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 ### Históricas
 - **Representatividad limitada** a fuentes conservadas
 - **Variabilidad ortográfica** según período
-- **Contexto geográfico** principalmente madrileño-vasco
+- **Contexto geográfico** principalmente madrileño.
 
 ### Metodológicas
 - **Automatización parcial** requiere validación manual
@@ -157,7 +157,7 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 
 ## 📄 Licencia y Uso Académico
 
-Este portal y sus análisis están desarrollados para fines de **investigación académica**. Los datos utilizados pertenecen al dominio público (publicaciones 1842-1935) y están disponibles para consulta académica.
+Este portal y sus análisis están desarrollados para fines de **investigación académica**. Los datos utilizados pertenecen al dominio público y están disponibles para consulta académica.
 
 ## 📞 Contacto
 
