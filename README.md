@@ -157,7 +157,7 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 
 # METODOLOGÍA DETALLADA DEL ANÁLISIS Y EXTRACCIÓN DE DATOS
 
-# 🔍 1. PROCESO DE EXTRACCIÓN DE DATOS DOCUMENTADO
+## 🔍 1. Proceso de extracción de datos
 
 1.1 ARQUITECTURA GENERAL DEL SISTEMA
 
@@ -165,14 +165,14 @@ El sistema desarrollado sigue una arquitectura modular con las siguientes fases:
 
 TXT → LIMPIEZA → EXTRACCIÓN → ANÁLISIS → VISUALIZACIÓN → WEB
 
-# Fase 1: Preprocesamiento (reemplazar.py)
+### Fase 1: Preprocesamiento (reemplazar.py)
 
 - Corrección de codificación: Conversión de caracteres mal codificados (Ã±→ñ, Ãº→ú)
 - Normalización tipográfica: Unión de palabras partidas por guiones
 - Limpieza estructural: Eliminación de líneas vacías y espacios redundantes
 - Procesamiento recursivo: Tratamiento automático de directorios completos
 
-# Fase 2: Extracción de Entidades (Scripts especializados por publicación)
+### Fase 2: Extracción de Entidades (Scripts especializados por publicación)
 
 Métodos de extracción identificados:
 1. Expresiones regulares avanzadas para nombres de compositores:
@@ -188,20 +188,20 @@ Ejemplo de patrón para compositores
     - Análisis de menciones profesionales diferenciadas por género
     - Ratio calculado: 18:1 (hombres:mujeres) en tratamientos formales
 
-# Fase 3: Análisis Estadístico
+### Fase 3: Análisis Estadístico
 
   - Conteo de frecuencias con Collections.Counter
   - Agrupación temporal por años/períodos
   - Cálculo de ratios y porcentajes
   - Análisis de contexto valorativo (positivo/negativo/neutro)
 
-# Fase 4: Generación Web
+### Fase 4: Generación Web
 
   - Visualizaciones interactivas con Chart.js
   - Diseño responsivo con CSS moderno
   - Sistema de pestañas para navegación de contenido
 
-# 1.2 EXTRACCIÓN ESPECÍFICA POR GRÁFICOS
+## 1.2 Extracción específica por gráficos
 
   📊 Gráficos de Compositores
 
@@ -243,7 +243,7 @@ Ejemplo de patrón para compositores
   3. Conteo acumulativo de menciones
   4. Generación de series temporales para gráficos de línea
 
-# 🛠️ 2. MÉTODOS ALTERNATIVOS DE EXTRACCIÓN EVALUADOS
+## 🛠️ 2. Métodos alternativos de extracción (posibles mejoras)
 
 2.1 MEJORAS TÉCNICAS POSIBLES
 
@@ -261,7 +261,7 @@ Opciones evaluadas:
   - Análisis de sentimiento para valoración de menciones
   - Clustering para descubrimiento automático de temas
 
-# 2.2 ENFOQUES ALTERNATIVOS DE CATEGORIZACIÓN
+2.2 ENFOQUES ALTERNATIVOS DE CATEGORIZACIÓN
 
 Taxonomías Musicológicas Estándar
   - Clasificación por períodos musicales: Barroco, Clásico, Romántico,
@@ -274,7 +274,7 @@ Análisis de Redes Sociales
   - Análisis de centralidad para identificar figuras clave
   - Detección de comunidades en el mundo musical
 
-# 📊 3. PRECISIÓN Y LIMITACIONES ACTUALES
+## 📊 3. Precisión y limitaciones actuales
 
   3.1 FORTALEZAS DEL SISTEMA ACTUAL
 
@@ -300,8 +300,7 @@ Análisis de Redes Sociales
   - Caracteres especiales mal interpretados
   - Texto fragmentado por layouts complejos
 
-
-# 🔧 4. IMPLEMENTACIONES FUTURAS PARA MAYOR PRECISIÓN
+## 🔧 4. Implementaciones futuras para mayor precisión
 
 4.1 MEJORAS INMEDIATAS IMPLEMENTABLES
 
@@ -364,7 +363,7 @@ Geografía Musical Detallada
   - Corrección post-OCR con contexto musical
   - Digitalización asistida para textos complejos
 
-# 🎯 5. IMPACTO EN CREACIÓN DE CATEGORÍAS
+## 🎯 5. Impacto en creación de categorías
 
   5.1 Influencia Directa del Usuario
 
@@ -403,7 +402,7 @@ Parámetros de Análisis Ajustables
   - Comparación con fuentes historiográficas establecidas
   - Triangulación de datos entre múltiples corpus
 
-# 📝 6. CONCLUSIONES Y RECOMENDACIONES FINALES PARA LA METODOLOGÍA BÁSICA
+## 📝 6. Conclusiones y recomendaciones finales para la metodología de extracción de datos
 
 6.1 Evaluación del Sistema Actual
 
