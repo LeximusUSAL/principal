@@ -28,6 +28,7 @@ Lectura OCR mejorada por LexiMus con VERTEX AI, actualmente en proceso de depura
 - **Python** - Procesamiento de corpus textuales
 - **VERTEX AI** - Módulos pre-entrenados de Google para la extracción de texto
 - **eScriptorium** - Transcripción y mejora de OCR (actualmente en proceso)
+- **Claude Code** - Para procesamiento y desarrollo general
 
 ## 🎯 Valor Académico
 
