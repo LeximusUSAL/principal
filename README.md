@@ -155,61 +155,53 @@ Este portal presenta **resultados preliminares** que mejorarán progresivamente 
 - **Patrones de búsqueda** en constante refinamiento
 - **Interpretación contextual** dependiente de especialización musicológica
 
-ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES 
-  HISTÓRICAS
+# METODOLOGÍA DETALLADA DEL ANÁLISIS Y EXTRACCIÓN DE DATOS
 
+# 🔍 1. PROCESO DE EXTRACCIÓN DE DATOS DOCUMENTADO
 
+1.1 ARQUITECTURA GENERAL DEL SISTEMA
 
-  🔍 1. PROCESO DE EXTRACCIÓN DE DATOS DOCUMENTADO
+El sistema desarrollado sigue una arquitectura modular con las siguientes fases:
 
-  1.1 ARQUITECTURA GENERAL DEL SISTEMA
+TXT → LIMPIEZA → EXTRACCIÓN → ANÁLISIS → VISUALIZACIÓN → WEB
 
-  El sistema desarrollado sigue una arquitectura modular con las siguientes
-   fases:
+# Fase 1: Preprocesamiento (reemplazar.py)
 
-  TXT → LIMPIEZA → EXTRACCIÓN → ANÁLISIS → VISUALIZACIÓN → WEB
+- Corrección de codificación: Conversión de caracteres mal codificados (Ã±→ñ, Ãº→ú)
+- Normalización tipográfica: Unión de palabras partidas por guiones
+- Limpieza estructural: Eliminación de líneas vacías y espacios redundantes
+- Procesamiento recursivo: Tratamiento automático de directorios completos
 
-  Fase 1: Preprocesamiento (reemplazar.py)
+# Fase 2: Extracción de Entidades (Scripts especializados por publicación)
 
-  - Corrección de codificación: Conversión de caracteres mal codificados
-  (Ã±→ñ, Ãº→ú)
-  - Normalización tipográfica: Unión de palabras partidas por guiones
-  - Limpieza estructural: Eliminación de líneas vacías y espacios
-  redundantes
-  - Procesamiento recursivo: Tratamiento automático de directorios
-  completos
-
-  Fase 2: Extracción de Entidades (Scripts especializados por publicación)
-
-  Métodos de extracción identificados:
-
-  1. Expresiones regulares avanzadas para nombres de compositores:
-  # Ejemplo de patrón para compositores
+Métodos de extracción identificados:
+1. Expresiones regulares avanzadas para nombres de compositores:
+Ejemplo de patrón para compositores
   r'\b(Beethoven|Mozart|Bach|Wagner|Falla)\b'
 
-  2. Listas predefinidas de entidades musicales:
+2. Listas predefinidas de entidades musicales:
     - 35+ compositores identificados para El Sol
     - 50+ instrumentos musicales catalogados
     - 20+ géneros musicales clasificados
-  3. Análisis contextual para género social:
+3. Análisis contextual para género social:
     - Detección de tratamientos formales: "D.", "Sr.", "Sra.", "Señorita"
     - Análisis de menciones profesionales diferenciadas por género
     - Ratio calculado: 18:1 (hombres:mujeres) en tratamientos formales
 
-  Fase 3: Análisis Estadístico
+# Fase 3: Análisis Estadístico
 
   - Conteo de frecuencias con Collections.Counter
   - Agrupación temporal por años/períodos
   - Cálculo de ratios y porcentajes
   - Análisis de contexto valorativo (positivo/negativo/neutro)
 
-  Fase 4: Generación Web
+# Fase 4: Generación Web
 
   - Visualizaciones interactivas con Chart.js
   - Diseño responsivo con CSS moderno
   - Sistema de pestañas para navegación de contenido
 
-  1.2 EXTRACCIÓN ESPECÍFICA POR GRÁFICOS
+# 1.2 EXTRACCIÓN ESPECÍFICA POR GRÁFICOS
 
   📊 Gráficos de Compositores
 
@@ -232,10 +224,9 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
   3. Conteo diferenciado de menciones profesionales
   4. Cálculo de ratios para visualización
 
-  Resultado clave: Ratio 17.8:1 en tratamientos formales (hombres vs
-  mujeres)
+  Resultado clave: Ratio 17.8:1 en tratamientos formales (hombres vs mujeres)
 
-  🌍 Mapeo de Diversidad Cultural
+  🌍 Mapeo de Diversidad Cultural y Geografía Musical
 
   Proceso documentado:
   1. Identificación de términos étnicos/raciales en contexto
@@ -252,59 +243,47 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
   3. Conteo acumulativo de menciones
   4. Generación de series temporales para gráficos de línea
 
-  🛠️ 2. MÉTODOS ALTERNATIVOS DE EXTRACCIÓN EVALUADOS
+# 🛠️ 2. MÉTODOS ALTERNATIVOS DE EXTRACCIÓN EVALUADOS
 
-  2.1 MEJORAS TÉCNICAS POSIBLES
+2.1 MEJORAS TÉCNICAS POSIBLES
 
-  Procesamiento de Lenguaje Natural Avanzado
-
-  Alternativas identificadas:
-  - Named Entity Recognition (NER) con spaCy o NLTK para identificación
-  automática de personas
+Procesamiento de Lenguaje Natural Avanzado
+Alternativas identificadas:
+  - Named Entity Recognition (NER) con spaCy o NLTK para identificación automática de personas
   - Análisis semántico para mejor detección de contextos musicales
-  - Modelos de lenguaje pre-entrenados para clasificación automática de
-  géneros
+  - Modelos de lenguaje pre-entrenados para clasificación automática de géneros
+Ventajas: Mayor precisión en detección de entidades
+Desventajas: Mayor complejidad computacional y dependencias Machine Learning para Clasificación
 
-  Ventajas: Mayor precisión en detección de entidades
-  Desventajas: Mayor complejidad computacional y dependencias
-
-  Machine Learning para Clasificación
-
-  Opciones evaluadas:
+Opciones evaluadas:
   - Clasificadores de texto para tipos de artículos (crítica, teoría,
   educativo)
   - Análisis de sentimiento para valoración de menciones
   - Clustering para descubrimiento automático de temas
 
-  
-  2.2 ENFOQUES ALTERNATIVOS DE CATEGORIZACIÓN
+# 2.2 ENFOQUES ALTERNATIVOS DE CATEGORIZACIÓN
 
-  Taxonomías Musicológicas Estándar
-
+Taxonomías Musicológicas Estándar
   - Clasificación por períodos musicales: Barroco, Clásico, Romántico,
   Moderno
   - Géneros por tradición: Académica vs Popular vs Folclórica
   - Instrumentación sistemática: Cuerdas, Vientos, Percusión, etc
 
-  Análisis de Redes Sociales
-
+Análisis de Redes Sociales
   - Mapeo de conexiones entre compositores, intérpretes e instituciones
   - Análisis de centralidad para identificar figuras clave
   - Detección de comunidades en el mundo musical
 
-  📊 3. PRECISIÓN Y LIMITACIONES ACTUALES
+# 📊 3. PRECISIÓN Y LIMITACIONES ACTUALES
 
   3.1 FORTALEZAS DEL SISTEMA ACTUAL
 
-
   Múltiples Dimensiones de Análisis
-
   - Análisis de género social con métricas cuantificadas
   - Diversidad cultural categorizada sistemáticamente
   - Evolución temporal con granularidad anual
 
   Visualización Efectiva
-
   - Gráficos interactivos con Chart.js
   - Diseño responsivo para múltiples dispositivos
   - Navegación intuitiva por pestañas temáticas
@@ -312,47 +291,43 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
   3.2 LIMITACIONES IDENTIFICADAS
 
   Dependencia de Patrones Predefinidos
-
   - Pérdida de entidades no incluidas en listas predefinidas
   - Variaciones ortográficas históricas no contempladas
   - Contextos ambiguos mal interpretados
 
   Calidad de OCR
-
   - Errores de digitalización en textos históricos
   - Caracteres especiales mal interpretados
   - Texto fragmentado por layouts complejos
 
-  
 
-  🔧 4. IMPLEMENTACIONES FUTURAS PARA MAYOR PRECISIÓN
+# 🔧 4. IMPLEMENTACIONES FUTURAS PARA MAYOR PRECISIÓN
 
-  4.1 MEJORAS INMEDIATAS IMPLEMENTABLES
+4.1 MEJORAS INMEDIATAS IMPLEMENTABLES
 
-  Expansión de Listas de Entidades
+Expansión de Listas de Entidades
 
-  # Expansión recomendada
+Expansión recomendada
   compositores_espanoles = ['Falla', 'Granados', 'Albéniz', 'Turina',
   'Rodrigo', 'Halffter']
   instrumentos_historicos = ['clave', 'virginal', 'viola da gamba',
   'sacabuche']
 
-  Validación Cruzada
+Validación Cruzada
 
   - Verificación manual de muestras aleatorias
   - Comparación entre publicaciones para validación
   - Métricas de precisión calculadas sistemáticamente
 
-  Normalización Temporal
+Normalización Temporal
 
   - Conversion de fechas a formatos estándar
   - Períodos históricos como etiquetas adicionales
   - Contexto político/social como metadata
 
-  4.2 CATEGORÍAS DE ANÁLISIS MÁS PRECISAS
+4.2 CATEGORÍAS DE ANÁLISIS MÁS PRECISAS
 
-  Jerarquía Musical Refinada
-
+Jerarquía Musical Refinada
   Música Académica
   ├── Música Vocal
   │   ├── Ópera
@@ -367,34 +342,29 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
       ├── Zarzuela
       └── Incidental
 
-  Análisis de Género Social Multidimensional
-
+Análisis de Género Social Multidimensional
   - Roles profesionales específicos (compositora, intérprete, crítica,
   empresaria)
   - Espacios de actuación (público vs privado, nacional vs internacional)
   - Discurso de género en las reseñas críticas
 
-  Geografía Musical Detallada
-
+Geografía Musical Detallada
   - Origen de compositores por regiones específicas
   - Circuitos de distribución musical
   - Influencias culturales transnacionales
 
-  4.3 TECNOLOGÍAS EMERGENTES APLICABLES
-
+4.3 TECNOLOGÍAS EMERGENTES APLICABLES
   Inteligencia Artificial Generativa
-
   - Large Language Models para análisis semántico profundo
   - Extracción de entidades con modelos específicos de dominio
   - Generación automática de metadatos estructurados
 
   Análisis de Imagen para OCR Mejorado
-
   - Modelos de visión computacional para layout analysis
   - Corrección post-OCR con contexto musical
   - Digitalización asistida para textos complejos
 
-  🎯 5. IMPACTO EN CREACIÓN DE CATEGORÍAS
+# 🎯 5. IMPACTO EN CREACIÓN DE CATEGORÍAS
 
   5.1 Influencia Directa del Usuario
 
@@ -403,7 +373,7 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
   El usuario puede influir directamente en la precisión expandiendo las
   listas predefinidas:
 
-  # Archivo de configuración modificable
+Archivo de configuración modificable
   COMPOSITORES_ADICIONALES = [
       'Vives', 'Chapí', 'Bretón', 'Giménez', 'Serrano'
   ]
@@ -412,13 +382,13 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
       'revista musical', 'opereta', 'sainete lírico'
   ]
 
-  Parámetros de Análisis Ajustables
+Parámetros de Análisis Ajustables
 
   - Umbrales de frecuencia para inclusión en rankings
   - Ventanas temporales para análisis de evolución
   - Niveles de granularidad geográfica o temática
 
-  5.2 Metodologías de Refinamiento
+5.2 Metodologías de Refinamiento
 
   Iteración Colaborativa
 
@@ -433,26 +403,25 @@ ANÁLISIS Y EXTRACCIÓN DE DATOS DE REVISTAS MUSICALES
   - Comparación con fuentes historiográficas establecidas
   - Triangulación de datos entre múltiples corpus
 
-  📝 6. CONCLUSIONES Y RECOMENDACIONES FINALES
+# 📝 6. CONCLUSIONES Y RECOMENDACIONES FINALES PARA LA METODOLOGÍA BÁSICA
 
-  6.1 Evaluación del Sistema Actual
+6.1 Evaluación del Sistema Actual
 
-  El sistema desarrollado representa un avance significativo en el análisis
-   computacional de prensa musical histórica, con:
+El sistema desarrollado representa un avance significativo en el análisis computacional de prensa musical histórica, con:
 
   - ✅ Cobertura exhaustiva de corpus especializados
   - ✅ Metodología reproducible y documentada
   - ✅ Visualizaciones efectivas para divulgación académica
   - ✅ Múltiples dimensiones de análisis integradas
 
-  6.2 Áreas Prioritarias de Mejora
+6.2 Áreas Prioritarias de Mejora
 
   1. Expansión de entidades con listas más comprehensivas
   2. Validación sistemática de resultados extraídos
   3. Incorporación de NLP avanzado para mayor precisión
   4. Desarrollo de taxonomías musicológicas más granulares
 
-  6.3 Valor Académico Actual
+6.3 Valor Académico Actual
 
   El trabajo realizado constituye una base sólida para estudios
   musicológicos digitales, proporcionando:
@@ -478,9 +447,9 @@ Para consultas académicas o colaboraciones:
 Si utilizas este trabajo en tu investigación, por favor cita:
 ```
 Análisis Musical Computacional de prensa histórica. 
-Proyecto LexiMus, Universidad de Salamanca. 
+Proyecto LexiMus: Léxico y ontología de la música en español (PID2022-139589NB-C33), Universidad de Salamanca. 
 Disponible en: https://LeximusUSAL.github.io/principal
 
 ---
 
-**🎼 "Tres siglos de música española a través del análisis computacional"** • © 2025 Universidad de Salamanca
+© 2025 Universidad de Salamanca
