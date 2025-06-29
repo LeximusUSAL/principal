@@ -175,6 +175,9 @@ TXT → LIMPIEZA → EXTRACCIÓN → ANÁLISIS → VISUALIZACIÓN → WEB
 
 ### Fase 2: Extracción de Entidades (Scripts especializados por publicación)
 
+- 50+ patrones de expresiones regulares
+- Identificación automática de compositores, intérpretes, obras
+
 Métodos de extracción identificados:
 1. Expresiones regulares avanzadas para nombres de compositores:
 Ejemplo de patrón para compositores
@@ -195,6 +198,23 @@ Ejemplo de patrón para compositores
   - Agrupación temporal por años/períodos
   - Cálculo de ratios y porcentajes
   - Análisis de contexto valorativo (positivo/negativo/neutro)
+
+Frecuencias Absolutas:
+  - Conteo directo de menciones por término
+  - Ejemplo: Beethoven = 1,077 menciones
+
+  Frecuencias Relativas:
+  - Cálculo por mil (‰): (menciones/total_palabras) × 1000
+  - Ejemplo: Piano = 14.4‰ (4,125 menciones en 285,650 palabras)
+
+  Densidad Léxica:
+  - Porcentaje de términos musicales: (términos_musicales/total_palabras) ×
+   100
+  - Ejemplo: 15.8% densidad léxica musical en El Sol
+
+- Cálculo de tasas de crecimiento: ((valor_final - 
+  valor_inicial)/valor_inicial) × 100
+  - Ejemplo: Jazz +450% crecimiento entre 1920-1935
 
 ### Fase 4: Generación Web
 
@@ -243,6 +263,23 @@ Ejemplo de patrón para compositores
   2. Agrupación por año/período
   3. Conteo acumulativo de menciones
   4. Generación de series temporales para gráficos de línea
+
+Algoritmos de Procesamiento
+
+  Funciones JavaScript Principales:
+  // Transformación de datos para gráficos
+  data: datosCompletos.compositores.map(c => c.menciones)
+
+  // Operaciones de conjuntos para valores únicos
+  const terminosUnicos = [...new Set(datos.map(p => p.termino))]
+
+  // Procesamiento condicional temporal
+  data: años.map(año => {
+      const item = datos.find(p => p.año === año && p.termino === termino);
+      return item ? item.menciones : 0;
+  })
+
+## Esta metodología garantiza rigor científico y transparencia en el análisis, permitiendo reproducibilidad y verificación independiente de los resultados.
 
 ## 🛠️ 2. Métodos alternativos de extracción (posibles mejoras)
 
