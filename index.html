@@ -402,6 +402,247 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* Comparative Analysis Section */
+        .comparative-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e1e7f0 100%);
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .comparative-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(139, 75, 59, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(44, 90, 160, 0.08) 0%, transparent 50%);
+        }
+
+        .comparative-showcase {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .comparative-card {
+            background: var(--surface);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .comparative-card.featured {
+            border: 2px solid var(--accent);
+        }
+
+        .comparative-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .comparative-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .comparative-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparative-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparative-period {
+            opacity: 0.9;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .comparative-body {
+            padding: 2.5rem;
+        }
+
+        .comparative-intro {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .comparative-highlights {
+            margin-bottom: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: var(--surface-alt);
+            border-radius: var(--border-radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: var(--accent-light);
+            transform: translateX(8px);
+        }
+
+        .highlight-item i {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item span {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .comparative-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--surface-alt);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .comparison-stat {
+            text-align: center;
+        }
+
+        .comparison-stat .stat-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-stat .stat-value {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .comparative-cta {
+            margin-top: 2rem;
+        }
+
+        .comparative-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--gradient-accent);
+            color: var(--primary);
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparative-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            color: var(--primary);
+        }
+
+        .comparative-link i:first-child {
+            font-size: 1.1rem;
+        }
+
+        .comparative-link i:last-child {
+            transition: transform 0.3s ease;
+        }
+
+        .comparative-link:hover i:last-child {
+            transform: translateX(5px);
+        }
+
+        .coming-soon-card {
+            background: var(--surface);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .coming-soon-content i {
+            font-size: 2.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-content h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-content p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: var(--surface-alt);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         /* Methodology Section */
         .methodology {
             background: var(--surface-alt);
@@ -552,6 +793,37 @@
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparative-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparative-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .comparative-link {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .comparative-highlights {
+                margin-bottom: 1.5rem;
+            }
+
+            .highlight-item {
+                padding: 0.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                gap: 0.5rem;
+            }
+
+            .highlight-item i {
+                margin-top: 0;
             }
         }
 
@@ -906,6 +1178,104 @@
                             <i class="fas fa-external-link-alt"></i>
                             Acceder al Análisis
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparative Analysis Section -->
+    <section class="comparative-section" id="comparativas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-balance-scale"></i>
+                    Primeras Comparativas
+                </h2>
+                <p class="section-subtitle">
+                    Análisis contrastivo entre diferentes corpus para identificar patrones evolutivos en el discurso musical español
+                </p>
+            </div>
+
+            <div class="comparative-showcase">
+                <div class="comparative-card featured reveal">
+                    <div class="comparative-header">
+                        <div class="comparative-badge">
+                            <i class="fas fa-microscope"></i>
+                            NUEVO
+                        </div>
+                        <h3 class="comparative-title">La Iberia Musical vs Revistas BMH</h3>
+                        <div class="comparative-period">1842-1845 • 1909-1917 | Evolución de 67 años</div>
+                    </div>
+                    
+                    <div class="comparative-body">
+                        <div class="comparative-description">
+                            <p class="comparative-intro">
+                                <strong>Primera comparativa exhaustiva</strong> entre dos hitos del periodismo musical español separados por más de seis décadas. 
+                            </p>
+                            
+                            <div class="comparative-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-music"></i>
+                                    <span><strong>Canon Compositivo:</strong> Del dominio italiano (Rossini) al germánico (Wagner)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-theater-masks"></i>
+                                    <span><strong>Géneros Musicales:</strong> De la hegemonía operística a la diversificación instrumental</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-piano"></i>
+                                    <span><strong>Instrumentos:</strong> Ascenso orquestal y consolidación pianística</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span><strong>Geografía Musical:</strong> Persistencia madrileña y emergencia regional</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-book"></i>
+                                    <span><strong>Vocabulario Técnico:</strong> Del discurso estético al análisis especializado</span>
+                                </div>
+                            </div>
+                            
+                            <div class="comparative-stats">
+                                <div class="comparison-stat">
+                                    <span class="stat-label">Corpus Total</span>
+                                    <span class="stat-value">2.4M palabras</span>
+                                </div>
+                                <div class="comparison-stat">
+                                    <span class="stat-label">Período Analizado</span>
+                                    <span class="stat-value">13 años</span>
+                                </div>
+                                <div class="comparison-stat">
+                                    <span class="stat-label">Diferencia Temporal</span>
+                                    <span class="stat-value">67 años</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparative-cta">
+                            <a href="https://LeximusUSAL.github.io/IberiaMusical/comparativa.html" class="comparative-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Acceder al Análisis Comparativo</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-card reveal">
+                    <div class="coming-soon-content">
+                        <i class="fas fa-hourglass-half"></i>
+                        <h4>Próximas Comparativas</h4>
+                        <p>
+                            Se están desarrollando nuevos análisis contrastivos que incluirán más fuentes del proyecto LexiMus, 
+                            permitiendo trazar la evolución completa del discurso musical español desde 1842 hasta 2024.
+                        </p>
+                        <div class="coming-soon-features">
+                            <span class="feature-tag">El Sol vs Iberia Musical</span>
+                            <span class="feature-tag">Evolución Secular Completa</span>
+                            <span class="feature-tag">Análisis Multitemporales</span>
+                        </div>
                     </div>
                 </div>
             </div>
