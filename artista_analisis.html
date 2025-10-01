@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Temas Musicales - El Artista (1866-1868)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .stats-banner {
+            background: #f8f9fa;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .chart-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .temas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tema-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .tema-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tema-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .tema-stat {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        .tema-stat .label {
+            opacity: 0.9;
+        }
+
+        .tema-stat .value {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .vocabulario {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .vocabulario h4 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .vocab-list {
+            font-size: 0.85em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .project-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .charts-grid, .temas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Análisis de Temas Musicales</h1>
+            <p>El Artista (1866-1868)</p>
+        </header>
+
+        <div class="stats-banner">
+            <div class="stat-card">
+                <h3>118</h3>
+                <p>Archivos Analizados</p>
+            </div>
+            <div class="stat-card">
+                <h3>134,575</h3>
+                <p>Palabras Totales</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Archivos con Temas</p>
+            </div>
+            <div class="stat-card">
+                <h3>2,088</h3>
+                <p>Menciones Totales</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2>Distribución de Menciones</h2>
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Porcentaje de Menciones por Tema</h3>
+                        <canvas id="mencionesChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Porcentaje de Archivos por Tema</h3>
+                        <canvas id="archivosChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Análisis Detallado por Tema</h2>
+                <div class="temas-grid">
+                    <div class="tema-card">
+                        <h3>Música Instrumental</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">459 (21.98%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">104 (88.14%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                instrumental (238), música instrumental (186), instrumentales (23), conciertos instrumentales (6)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tema-card">
+                        <h3>Música Clásica</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">403 (19.30%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">98 (83.05%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                música clásica (246), clásica (141), clásicos (10), clásico (5)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tema-card">
+                        <h3>Cuarteto</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">393 (18.82%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">105 (88.98%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                cuarteto (193), cuartetos (146), quarteto (52), quartetos (1)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tema-card">
+                        <h3>Música de Cámara</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">393 (18.82%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">99 (83.90%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                cámara (170), música de cámara (148), quinteto (32), trio (14)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tema-card">
+                        <h3>Sonata</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">239 (11.45%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">93 (78.81%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                sonata (149), sonatas (90)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tema-card">
+                        <h3>Música Sabia</h3>
+                        <div class="tema-stat">
+                            <span class="label">Menciones:</span>
+                            <span class="value">201 (9.63%)</span>
+                        </div>
+                        <div class="tema-stat">
+                            <span class="label">Archivos:</span>
+                            <span class="value">88 (74.58%)</span>
+                        </div>
+                        <div class="vocabulario">
+                            <h4>Vocabulario Principal:</h4>
+                            <div class="vocab-list">
+                                música clásica (123), música sabia (77), música seria (1)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Proyecto LexiMus</strong></p>
+            <p>Léxico y ontología de la música en español</p>
+            <div class="project-info">
+                <p>Universidad de Salamanca | Instituto Complutense de Ciencias Musicales | Universidad de La Rioja</p>
+                <p>PID2022-139589NB-C33</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Datos del análisis
+        const temas = {
+            labels: ['Música Instrumental', 'Música Clásica', 'Cuarteto', 'Música de Cámara', 'Sonata', 'Música Sabia'],
+            menciones: [459, 403, 393, 393, 239, 201],
+            porcentajes_menciones: [21.98, 19.30, 18.82, 18.82, 11.45, 9.63],
+            archivos: [104, 98, 105, 99, 93, 88],
+            porcentajes_archivos: [88.14, 83.05, 88.98, 83.90, 78.81, 74.58]
+        };
+
+        const colores = [
+            'rgba(102, 126, 234, 0.8)',
+            'rgba(118, 75, 162, 0.8)',
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 206, 86, 0.8)',
+            'rgba(75, 192, 192, 0.8)'
+        ];
+
+        const coloresBordes = [
+            'rgba(102, 126, 234, 1)',
+            'rgba(118, 75, 162, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+        ];
+
+        // Gráfico de Menciones
+        const ctxMenciones = document.getElementById('mencionesChart').getContext('2d');
+        new Chart(ctxMenciones, {
+            type: 'doughnut',
+            data: {
+                labels: temas.labels,
+                datasets: [{
+                    data: temas.menciones,
+                    backgroundColor: colores,
+                    borderColor: coloresBordes,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const percentage = temas.porcentajes_menciones[context.dataIndex];
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Archivos
+        const ctxArchivos = document.getElementById('archivosChart').getContext('2d');
+        new Chart(ctxArchivos, {
+            type: 'bar',
+            data: {
+                labels: temas.labels,
+                datasets: [{
+                    label: '% de Archivos',
+                    data: temas.porcentajes_archivos,
+                    backgroundColor: colores,
+                    borderColor: coloresBordes,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const archivos = temas.archivos[context.dataIndex];
+                                const percentage = context.parsed.y;
+                                return `${archivos} archivos (${percentage}%)`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Porcentaje de Archivos'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 10
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
